@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('Principal.index');
 });
+
+Route::get('/inventario',[
+    'uses'=>'InventarioController@getInventario',
+    'as'=>'inventario'
+]);
