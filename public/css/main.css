@@ -120,18 +120,9 @@ header[role=banner] .utilities li a {
 
 /* header */
 .utilities a:before {
-    content: "\f248";
-    font-family: FontAwesome;
     padding-right: .6em;
 }
 
-.logout a:before {
-    content: "";
-}
-
-.users a:before {
-    content: "";
-}
 
 nav[role=navigation] {
     background: #2a3542;
@@ -151,31 +142,17 @@ nav[role=navigation] li a:hover {
     background-color: rgba(255, 255, 255, 0.05);
 }
 nav[role=navigation] li a:before {
-    content: "\f248";
-    font-family: FontAwesome;
     padding-right: .6em;
-}
-nav[role=navigation] .dashboard a:before {
-    content: "";
-}
-nav[role=navigation] .write a:before {
-    content: "";
-}
-nav[role=navigation] .edit a:before {
-    content: "";
-}
-nav[role=navigation] .comments a:before {
-    content: "";
-}
-nav[role=navigation] .users a:before {
-    content: "";
 }
 
 /* current nav item */
-.current, .dashboard .dashboard a, .write .write a, .edit .edit a, .comments .comments a, .users .users a {
+.current, .inve .inve a, .write .write a, .edit .edit a, .comments .comments a, .users .users a {
     background-color: rgba(255, 255, 255, 0.1);
 }
-
+.inve,.users{
+    text-align: center;
+    font-size: 18px;
+}
 footer[role=contentinfo] {
     background: slategray;
     color: #ddd;
