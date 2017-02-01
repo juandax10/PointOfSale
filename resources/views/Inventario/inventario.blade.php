@@ -4,7 +4,7 @@
     @endsection
 @section('content')
     <link rel="stylesheet" href="{{URL::to('css/inventario.css')}}">
-
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,300,700">
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -15,11 +15,11 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Company</th>
-                            <th>Price</th>
-                            <th>Change</th>
-                            <th>Change %</th>
+                            <th>Nombre</th>
+                            <th>Precio Compra</th>
+                            <th>Precio Venta</th>
+                            <th>Cantidad p/u</th>
+                            <th>Cantidad Total</th>
                         </tr>
                         </thead>
                     </table>
