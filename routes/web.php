@@ -19,3 +19,7 @@ Route::get('/inventario',[
     'uses'=>'InventarioController@getInventario',
     'as'=>'inventario'
 ]);
+Route::get('/pedidos',[
+    'uses'=>'InventarioController@getPedidos',
+    'as'=>'pedidos'
+]);

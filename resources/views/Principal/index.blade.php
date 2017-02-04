@@ -3,6 +3,8 @@
     POS by JD
 @endsection
 @section('content')
+
+
     <link rel="stylesheet" href="{{URL::to('css/main.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic">
     <header role="banner">
@@ -16,7 +18,7 @@
     <nav role='navigation'>
         <ul class="main">
             <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Inventario</a></li>
-            <li class="write"><a href="#">Write Post</a></li>
+            <li class="write"><a href="{{route('pedidos')}}">Pedidos</a></li>
             <li class="edit"><a href="#">Edit Posts</a></li>
             <li class="comments"><a href="#">Comments</a></li>
             <li class="users"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Manage Users</a></li>

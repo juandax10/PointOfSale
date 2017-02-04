@@ -11,4 +11,8 @@ class InventarioController extends Controller
     {
         return view('Inventario.inventario');
     }
+    public function getPedidos()
+    {
+        return view('Pedidos.pedidos');
+    }
 }
