@@ -23,3 +23,7 @@ Route::get('/pedidos',[
     'uses'=>'InventarioController@getPedidos',
     'as'=>'pedidos'
 ]);
+Route::post('/save-product',[
+    'uses'=>'InventarioController@postProducto',
+    'as'=>'añadir'
+]);
