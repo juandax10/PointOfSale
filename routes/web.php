@@ -27,3 +27,8 @@ Route::post('/save-product',[
     'uses'=>'InventarioController@postProducto',
     'as'=>'añadir'
 ]);
+
+Route::post('/edit', [
+    'uses'=>'InventarioController@getEditProduct',
+    'as'=> 'product.edit'
+]);

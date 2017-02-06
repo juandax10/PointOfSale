@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
            // $table->string('imagePath');
             $table->string('nombre')->unique();
           //  $table->text('description');
-            $table->integer('id_categoria');
+            $table->integer('categoria_id')->unsigned()->index();
           //  $table->string('id_marca');
             $table->integer('cantidad');
            // $table->integer('cantidad_por_unidad');
