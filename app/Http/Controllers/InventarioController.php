@@ -34,9 +34,15 @@ class InventarioController extends Controller
 
     public function getEditProduct(Request $request)
     {
+        $cat=0;
+        $id=strtoupper($request->input('catego'));
+        if($id=='SOMBRERO') {$cat=1;}
+        if($id=='FIESTA') {$cat=2;}
+        if($id=='ROPA') {$cat=3;}
+        if($id=='SUPLES') {$cat=4;}
         Product::where('id', $request->input('id'))
-            ->update(['nombre' => $request->input('nombre'),'precio_Compra'=>$request->input('compra')
-                ,'precio_Venta'=>$request->input('venta'),'categoria_id'=>$request->input('catego'),'cantidad'=>$request->input('cantidad')]);
+            ->update(['nombre' => strtoupper($request->input('nombre')),'precio_Compra'=>$request->input('compra')
+                ,'precio_Venta'=>$request->input('venta'),'categoria_id'=>$cat,'cantidad'=>$request->input('cantidad')]);
         return back();
 
     }
