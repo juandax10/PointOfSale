@@ -148,13 +148,6 @@ nav[role=navigation] li a:before {
     text-align: center;
     font-size: 18px;
 }
-footer[role=contentinfo] {
-    background: slategray;
-    color: #ddd;
-    font-size: .8em;
-    text-align: center;
-    padding: .2em;
-}
 
 /* panels */
 .panel {
@@ -399,7 +392,7 @@ td {
     }
 
     main[role=main] {
-        margin: 75px 0 40px 200px;
+        margin: 82px 0 0 190px; /*hacia abajo o arriba,,,a la derecha o izq*/
     }
     main[role=main]:after {
         content: "";
@@ -432,10 +425,6 @@ td {
         float: left;
     }
 
-    footer[role=contentinfo] {
-        clear: both;
-        margin-left: 200px;
-    }
 }
 @media screen and (min-width: 900px) {
     footer[role=contentinfo] {
@@ -456,4 +445,210 @@ td {
     .panel.secondary {
         width: 23%;
     }
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+#container {
+    display: table;
+    width: 1300px;
+    background: #202b33;
+    margin: 60px auto;
+    border-radius: 4px;
+}
+
+.menu li {
+    height: 30px;/*altura de celda categorias*/
+    width: 100%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .6);
+    position: relative;
+    text-decoration: none;
+    line-height: 2em;/*bajar texto un poco*/
+    text-align: center;
+}
+.menu li:hover {
+    color: #239ae3;
+}
+.menu li:first-child {
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+/* Content */
+#content {
+    width: calc(100% - 240px);
+    height: 100%;
+    padding: 25px;
+    display: table-cell;
+}
+#titleBar {
+    height: 36px;
+    margin-bottom: 30px;
+}
+#profilePic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #999;
+    float: right;
+    margin-top: -8px;
+    margin-left: 14px;
+    overflow: hidden;
+}
+#profilePic img {
+    width: 100%;
+}
+.controls {
+    display: block;
+    width: 70px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    float: right;
+    border-radius: 20px;
+}
+.activeControl {
+    background: rgba(255, 255, 255, 0.9);
+    color: #202b33;
+    font-weight: 600;
+}
+#salesData {
+    margin-bottom: 60px;
+}
+#totalSales {
+    height: 120px;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 50px;
+}
+#totalSales .col {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+#totalSales .col .progressTitle {
+    float: left;
+    margin-left: 20px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+}
+.progressBar {
+    float: left;
+    height: 120px;
+    width: 120px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 120px;
+}
+
+/* Icons */
+.notification {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #202b33;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .6);
+    position: absolute;
+    top: 0; bottom: 0; right: 2%;
+    margin: auto;
+}
+.colorIcon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0; bottom: 0; right: 2%;
+    margin: auto;
+}
+.plus {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #202b33;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 8px;
+    padding: 4px;
+    margin-right: 6px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, .2);
+}
+.red {
+    background: #ec1561;
+}
+.orange {
+    background: #ff9939;
+}
+.green {
+    background: #2bab51;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 10px;
+    padding-bottom: 14px;
+}
+tr:not(:first-child):hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+td {
+    height: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 0 10px;
+}
+/* Headers */
+.uno {
+    font-size: 13px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.dos {
+    float: left;
+    font-size: 19px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 0;
+    color: rgba(255, 255, 255, .8);
+}
+.tres{
+    float: left;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 8%;
+    margin-left: 20px;
+    margin-bottom: 6px;
+}
+
+.clearFix {
+    clear: both;
 }

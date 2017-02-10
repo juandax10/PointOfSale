@@ -4,9 +4,8 @@
 @endsection
 @section('content')
 
-
     <link rel="stylesheet" href="{{URL::to('css/main.css')}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     <header role="banner">
         <h1>Admin Panel</h1>
         <ul class="utilities">
@@ -17,120 +16,201 @@
 
     <nav role='navigation'>
         <ul class="main">
-            <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Inventario</a></li>
+            <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i>
+                    Inventario</a></li>
             <li class="write"><a href="{{route('pedidos')}}">Pedidos</a></li>
             <li class="edit"><a href="#">Edit Posts</a></li>
             <li class="comments"><a href="#">Comments</a></li>
             <li class="users"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Manage Users</a></li>
+
+        </ul>
+        <ul class="menu">
+            <li class="inve">Categories</li>
+            <li>Pagina<span class="colorIcon red"></span></li>
+            <li>Mercado <span class="colorIcon orange"></span></li>
+            <li>Tienda<span class="colorIcon green"></span></li>
         </ul>
     </nav>
 
     <main role="main">
-        <section class="panel important">
-            <h2>Welcome to Your Dashboard </h2>
-            <ul>
-                <li>Important panel that will always be really wide Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                <li>Aliquam tincidunt mauris eu risus.</li>
-                <li>Vestibulum auctor dapibus neque.</li>
-            </ul>
-        </section>
-        <section class="panel">
-            <h2>Posts</h2>
-            <ul>
-                <li><b>2458 </b>Published Posts</li>
-                <li><b>18</b> Drafts.</li>
-                <li>Most popular post: <b>This is a post title</b>.</li>
-            </ul>
-        </section>
-        <section class="panel">
-            <h2>Chart</h2>
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                <li>Aliquam tincidunt mauris eu risus.</li>
-                <li>Vestibulum auctor dapibus neque.</li>
-            </ul>
-        </section>
-        <section class="panel important">
-            <h2>Write a post</h2>
-            <form action="#">
-                <div class="twothirds">
-                    <label for="name">Text Input:</label>
-                    <input type="text" name="name" id="name" placeholder="John Smith" />
+        <div id="container">
+            <div class="col-md-11">
+                <div id="content">
+                    <div id="titleBar">
+                        <h2 class="dos">Dashboard</h2>
 
-                    <label for="textarea">Textarea:</label>
-                    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-
-                </div>
-                <div class="onethird">
-                    <legend>Radio Button Choice</legend>
-
-                    <label for="radio-choice-1">
-                        <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" /> Choice 1
-                    </label>
-
-                    <label for="radio-choice-2">
-                        <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" /> Choice 2
-                    </label>
-
-
-                    <label for="select-choice">Select Dropdown Choice:</label>
-                    <select name="select-choice" id="select-choice">
-                        <option value="Choice 1">Choice 1</option>
-                        <option value="Choice 2">Choice 2</option>
-                        <option value="Choice 3">Choice 3</option>
-                    </select>
-
-
-                    <div>
-                        <label for="checkbox">
-                            <input type="checkbox" name="checkbox" id="checkbox" /> Checkbox
-                        </label>
+                        <div id="profilePic">
+                            <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/153917/profile/profile-512_1.jpg"/>
+                        </div>
+                        <span class="controls activeControl">Weekly</span>
+                        <span class="controls">Monthly</span>
                     </div>
 
-                    <div>
-                        <input type="submit" value="Submit" />
+                    <div class="mainChart">
+                        <canvas id="salesData"></canvas>
+                        <div class="col-md-11">
+                            <h2 class="dos">Total Sales</h2>
+
+                            <div class="clearFix"></div>
+
+                            <div id="totalSales">
+                                <div class="col">
+                                    <div id="creditSales" class="progressBar"></div>
+                                    <h3 class="tres">$36,059</h3>
+                                    <span class="progressTitle">Pagina </span>
+                                </div>
+                                <div class="col">
+                                    <div id="channelSales" class="progressBar"></div>
+                                    <h3 class="tres">$24,834</h3>
+                                    <span class="progressTitle">Mercado</span>
+                                </div>
+                                <div class="col">
+                                    <div id="directSales" class="progressBar"></div>
+                                    <h3 class="tres">$15,650</h3>
+                                    <span class="progressTitle">Tienda</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table>
+                            <tr>
+                                <th>November Sales</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+
+                            <tr>
+                                <td>Dallas Oak Dining Chair</td>
+                                <td>20</td>
+                                <td>$1,342</td>
+                            </tr>
+
+                            <tr>
+                                <td>Benmore Glass Coffee Table</td>
+                                <td>18</td>
+                                <td>$1,550</td>
+                            </tr>
+
+                            <tr>
+                                <td>Aoraki Leather Sofa</td>
+                                <td>15</td>
+                                <td>$4,170</td>
+                            </tr>
+
+                            <tr>
+                                <td>Bali Outdoor Wicker Chair</td>
+                                <td>25</td>
+                                <td>$2,974</td>
+                            </tr>
+                        </table>
                     </div>
+
                 </div>
-            </form>
-        </section>
-        <section class="panel">
-            <h2>feedback</h2>
-            <div class="feedback">This is neutral feedback Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, praesentium. Libero perspiciatis quis aliquid iste quam dignissimos, accusamus temporibus ullam voluptatum, tempora pariatur, similique molestias blanditiis at sunt earum neque.</div>
-            <div class="feedback error">This is warning feedback
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                    <li>Aliquam tincidunt mauris eu risus.</li>
-                    <li>Vestibulum auctor dapibus neque.</li>
-                </ul>  </div>
-            <div class="feedback success">This is positive feedback</div>
-
-        </section>
-        <section class="panel ">
-            <h2>Table</h2>
-            <table>
-                <tr>
-                    <th>Username</th>
-                    <th>Posts</th>
-                    <th>comments</th>
-                    <th>date</th>
-                </tr>
-                <tr>
-                    <td>Pete</td>
-                    <td>4</td>
-                    <td>7</td>
-                    <td>Oct 10, 2015</td>
-
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>5769</td>
-                    <td>2517</td>
-                    <td>Jan 1, 2014</td>
-                </tr>
-            </table>
-        </section>
+            </div>
+        </div>
+        </div>
 
     </main>
-    <footer role="contentinfo">Easy Admin Style by Melissa Cabral</footer>
 
 @endsection
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+<script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // https://dribbble.com/shots/1821178-Sales-Report?list=buckets&offset=0
+
+        // Line Chart
+        var salesData = {
+            labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],
+            datasets: [
+                {
+                    label: "Front",
+                    fillColor: "rgba(195, 40, 96, 0.1)",
+                    strokeColor: "rgba(195, 40, 96, 1)",
+                    pointColor: "rgba(195, 40, 96, 1)",
+                    pointStrokeColor: "#202b33",
+                    pointHighlightStroke: "rgba(225,225,225,0.9)",
+                    data: [3400, 3000, 2500, 4500, 2500, 3400, 3000]
+                },
+                {
+                    label: "Middle",
+                    fillColor: "rgba(255, 172, 100, 0.1)",
+                    strokeColor: "rgba(255, 172, 100, 1)",
+                    pointColor: "rgba(255, 172, 100, 1)",
+                    pointStrokeColor: "#202b33",
+                    pointHighlightStroke: "rgba(225,225,225,0.9)",
+                    data: [1900, 1700, 2100, 3600, 2200, 2500, 2000]
+                },
+                {
+                    label: "Back",
+                    fillColor: "rgba(19, 71, 34, 0.3)",
+                    strokeColor: "rgba(88, 188, 116, 1)",
+                    pointColor: "rgba(88, 188, 116, 1)",
+                    pointStrokeColor: "#202b33",
+                    pointHighlightStroke: "rgba(225,225,225,0.9)",
+                    data: [1000, 1400, 1100, 2600, 2000, 900, 1400]
+                }
+            ]
+        };
+        var ctx = document.getElementById("salesData").getContext("2d");
+        window.myLineChart = new Chart(ctx).Line(salesData, {
+            pointDotRadius: 6,
+            pointDotStrokeWidth: 2,
+            datasetStrokeWidth: 3,
+            scaleShowVerticalLines: false,
+            scaleGridLineWidth: 2,
+            scaleShowGridLines: true,
+            scaleGridLineColor: "rgba(225, 255, 255, 0.02)",
+            scaleOverride: true,
+            scaleSteps: 9,
+            scaleStepWidth: 500,
+            scaleStartValue: 0,
+
+            responsive: true
+
+        });
+
+        //Credit Sales
+        var creditSales = new ProgressBar.Circle('#creditSales', {
+            color: '#e81760',
+            strokeWidth: 3,
+            trailWidth: 3,
+            duration: 1500,
+            text: {
+                value: '0%'
+            },
+            step: function (state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0) + "%");
+            }
+        });
+        var channelSales = new ProgressBar.Circle('#channelSales', {
+            color: '#e88e3c',
+            strokeWidth: 3,
+            trailWidth: 3,
+            duration: 1500,
+            text: {
+                value: '0%'
+            },
+            step: function (state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0) + "%");
+            }
+        });
+        var directSales = new ProgressBar.Circle('#directSales', {
+            color: '#2bab51',
+            strokeWidth: 3,
+            trailWidth: 3,
+            duration: 1500,
+            text: {
+                value: '0%'
+            },
+            step: function (state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0) + "%");
+            }
+        });
+        creditSales.animate(0.8);
+        channelSales.animate(0.64);
+        directSales.animate(0.34);
+    });
+</script>
