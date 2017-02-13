@@ -3,19 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
 class VentasController extends Controller
 {
     //
     public function getVenta()
-    {/*
+    {
         $products= Product::all();
-        $catego=Cate::all();
-        $results2=array();
-        foreach ($products as $p) {
-            array_push($results2,$p->nombre);
-        }*/
-        return view('Venta.venta');
+
+        return view('Venta.venta',['products'=>$products]);
     }
 
 }

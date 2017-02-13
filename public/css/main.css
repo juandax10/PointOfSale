@@ -134,17 +134,22 @@ nav[role=navigation] li a {
     padding: .7em;
 }
 nav[role=navigation] li a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #09a6e4;
 }
 nav[role=navigation] li a:before {
     padding-right: .6em;
 }
 
 /* current nav item */
-.current, .inve .inve a, .write .write a, .edit .edit a, .comments .comments a, .users .users a {
+.current, .inve .inve a, .pedido .pedido a, .ventaa .ventaa a, .users .users a {
     background-color: rgba(255, 255, 255, 0.1);
 }
-.inve,.users{
+.inve,.users,.ventaa,.pedido{
+    text-align: center;
+    font-size: 18px;
+}
+.inve,.users,.ventaa,.pedido {
     text-align: center;
     font-size: 18px;
 }

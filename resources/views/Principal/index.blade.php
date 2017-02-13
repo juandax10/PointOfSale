@@ -16,15 +16,13 @@
 
     <nav role='navigation'>
         <ul class="main">
-            <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i>
-                    Inventario</a></li>
-            <li class="write"><a href="{{route('pedidos')}}">Pedidos</a></li>
-            <li class="edit"><a href="{{route('venta')}}">Venta</a></li>
-            <li class="comments"><a href="#">Comments</a></li>
-            <li class="users"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Manage Users</a></li>
-
+            <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Inventario</a></li>
+            <li class="pedido"><a href="{{route('pedidos')}}"><i class="fa fa-truck" aria-hidden="true"></i> Pedidos</a></li>
+            <li class="ventaa"><a href="{{route('venta')}}"><i class="fa fa-cart-plus" aria-hidden="true"></i> Venta</a></li>
+            <li class="users"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a></li>
         </ul>
         <ul class="menu">
+            <li></li>
             <li class="inve">Categories</li>
             <li>Pagina<span class="colorIcon red"></span></li>
             <li>Mercado <span class="colorIcon yellow"></span></li>
@@ -114,103 +112,103 @@
 
 @endsection
 @section('scripts')
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
-<script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        // https://dribbble.com/shots/1821178-Sales-Report?list=buckets&offset=0
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+    <script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // https://dribbble.com/shots/1821178-Sales-Report?list=buckets&offset=0
 
-        // Line Chart
-        var salesData = {
-            labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],
-            datasets: [
-                {
-                    label: "Front",
-                    fillColor: "rgba(195, 40, 96, 0.1)",
-                    strokeColor: "rgba(195, 40, 96, 1)",
-                    pointColor: "rgba(195, 40, 96, 1)",
-                    pointStrokeColor: "#202b33",
-                    pointHighlightStroke: "rgba(225,225,225,0.9)",
-                    data: [3400, 3000, 2500, 4500, 2500, 3400, 3000]
+            // Line Chart
+            var salesData = {
+                labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],
+                datasets: [
+                    {
+                        label: "Front",
+                        fillColor: "rgba(195, 40, 96, 0.1)",
+                        strokeColor: "rgba(195, 40, 96, 1)",
+                        pointColor: "rgba(195, 40, 96, 1)",
+                        pointStrokeColor: "#202b33",
+                        pointHighlightStroke: "rgba(225,225,225,0.9)",
+                        data: [3400, 3000, 2500, 4500, 2500, 3400, 3000]
+                    },
+                    {
+                        label: "Middle",
+                        fillColor: "rgba(255, 172, 100, 0.1)",
+                        strokeColor: "#e8e804", /*color linea*/
+                        pointColor: "#e8e804", /*color punto*/
+                        pointStrokeColor: "#202b33", /*color contorno punto*/
+                        pointHighlightStroke: "rgba(225,225,225,0.9)", /*color efecto punto*/
+                        data: [1900, 1700, 2100, 3600, 2200, 2500, 2000]
+                    },
+                    {
+                        label: "Back",
+                        fillColor: "rgba(19, 71, 34, 0.3)",
+                        strokeColor: "rgba(88, 188, 116, 1)",
+                        pointColor: "rgba(88, 188, 116, 1)",
+                        pointStrokeColor: "#202b33",
+                        pointHighlightStroke: "rgba(225,225,225,0.9)",
+                        data: [1000, 1400, 1100, 2600, 2000, 900, 1400]
+                    }
+                ]
+            };
+            var ctx = document.getElementById("salesData").getContext("2d");
+            window.myLineChart = new Chart(ctx).Line(salesData, {
+                pointDotRadius: 6,
+                pointDotStrokeWidth: 2,
+                datasetStrokeWidth: 3,
+                scaleShowVerticalLines: false,
+                scaleGridLineWidth: 2,
+                scaleShowGridLines: true,
+                scaleGridLineColor: "rgba(225, 255, 255, 0.02)",
+                scaleOverride: true,
+                scaleSteps: 9,
+                scaleStepWidth: 500,
+                scaleStartValue: 0,
+
+                responsive: true
+
+            });
+
+            //Credit Sales
+            var creditSales = new ProgressBar.Circle('#creditSales', {
+                color: '#e81760',
+                strokeWidth: 3,
+                trailWidth: 3,
+                duration: 1500,
+                text: {
+                    value: '0%'
                 },
-                {
-                    label: "Middle",
-                    fillColor: "rgba(255, 172, 100, 0.1)",
-                    strokeColor: "#e8e804",/*color linea*/
-                    pointColor: "#e8e804",/*color punto*/
-                    pointStrokeColor: "#202b33",/*color contorno punto*/
-                    pointHighlightStroke: "rgba(225,225,225,0.9)",/*color efecto punto*/
-                    data: [1900, 1700, 2100, 3600, 2200, 2500, 2000]
-                },
-                {
-                    label: "Back",
-                    fillColor: "rgba(19, 71, 34, 0.3)",
-                    strokeColor: "rgba(88, 188, 116, 1)",
-                    pointColor: "rgba(88, 188, 116, 1)",
-                    pointStrokeColor: "#202b33",
-                    pointHighlightStroke: "rgba(225,225,225,0.9)",
-                    data: [1000, 1400, 1100, 2600, 2000, 900, 1400]
+                step: function (state, bar) {
+                    bar.setText((bar.value() * 100).toFixed(0) + "%");
                 }
-            ]
-        };
-        var ctx = document.getElementById("salesData").getContext("2d");
-        window.myLineChart = new Chart(ctx).Line(salesData, {
-            pointDotRadius: 6,
-            pointDotStrokeWidth: 2,
-            datasetStrokeWidth: 3,
-            scaleShowVerticalLines: false,
-            scaleGridLineWidth: 2,
-            scaleShowGridLines: true,
-            scaleGridLineColor: "rgba(225, 255, 255, 0.02)",
-            scaleOverride: true,
-            scaleSteps: 9,
-            scaleStepWidth: 500,
-            scaleStartValue: 0,
-
-            responsive: true
-
+            });
+            var channelSales = new ProgressBar.Circle('#channelSales', {
+                color: '#e8e804',
+                strokeWidth: 3,
+                trailWidth: 3,
+                duration: 1500,
+                text: {
+                    value: '0%'
+                },
+                step: function (state, bar) {
+                    bar.setText((bar.value() * 100).toFixed(0) + "%");
+                }
+            });
+            var directSales = new ProgressBar.Circle('#directSales', {
+                color: '#2bab51',
+                strokeWidth: 3,
+                trailWidth: 3,
+                duration: 1500,
+                text: {
+                    value: '0%'
+                },
+                step: function (state, bar) {
+                    bar.setText((bar.value() * 100).toFixed(0) + "%");
+                }
+            });
+            creditSales.animate(0.8);
+            channelSales.animate(0.64);
+            directSales.animate(0.34);
         });
-
-        //Credit Sales
-        var creditSales = new ProgressBar.Circle('#creditSales', {
-            color: '#e81760',
-            strokeWidth: 3,
-            trailWidth: 3,
-            duration: 1500,
-            text: {
-                value: '0%'
-            },
-            step: function (state, bar) {
-                bar.setText((bar.value() * 100).toFixed(0) + "%");
-            }
-        });
-        var channelSales = new ProgressBar.Circle('#channelSales', {
-            color: '#e8e804',
-            strokeWidth: 3,
-            trailWidth: 3,
-            duration: 1500,
-            text: {
-                value: '0%'
-            },
-            step: function (state, bar) {
-                bar.setText((bar.value() * 100).toFixed(0) + "%");
-            }
-        });
-        var directSales = new ProgressBar.Circle('#directSales', {
-            color: '#2bab51',
-            strokeWidth: 3,
-            trailWidth: 3,
-            duration: 1500,
-            text: {
-                value: '0%'
-            },
-            step: function (state, bar) {
-                bar.setText((bar.value() * 100).toFixed(0) + "%");
-            }
-        });
-        creditSales.animate(0.8);
-        channelSales.animate(0.64);
-        directSales.animate(0.34);
-    });
-</script>
-    @endsection
+    </script>
+@endsection

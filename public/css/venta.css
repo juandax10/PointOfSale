@@ -1,0 +1,41 @@
+
+table{
+    width:100%;
+    table-layout: fixed;
+}
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(7, 8, 255, 0.93);
+
+}
+/* para editar la tabla, tamaño=height, */
+.tbl-content{
+    height:200px;/*mas grande=muestra mas datos */
+    overflow-x:hidden;
+    overflow-y:auto;
+    background: white;
+
+}
+section{
+    margin: 50px;
+}
+/*editar titulos*/
+th{
+    background: #25b7c4;
+    padding: 9px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2a3542;
+    text-transform: uppercase;
+}
+/*editar los renglones*/
+td{
+
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0708ff;
+    border: 1px solid rgba(7, 8, 255, 0.90);
+}
