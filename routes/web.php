@@ -23,6 +23,10 @@ Route::get('/pedidos',[
     'uses'=>'InventarioController@getPedidos',
     'as'=>'pedidos'
 ]);
+Route::get('/venta',[
+    'uses'=>'VentasController@getVenta',
+    'as'=>'venta'
+]);
 Route::post('/save-product',[
     'uses'=>'InventarioController@postProducto',
     'as'=>'añadir'
@@ -32,3 +36,7 @@ Route::post('/edit', [
     'uses'=>'InventarioController@getEditProduct',
     'as'=> 'product.edit'
 ]);
+
+Route::get('/catego', function () {
+    return view('Inventario.catego');
+})->name('catego');

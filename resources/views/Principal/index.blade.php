@@ -19,7 +19,7 @@
             <li class="inve"><a href="{{route('inventario')}}"><i class="fa fa-list-alt" aria-hidden="true"></i>
                     Inventario</a></li>
             <li class="write"><a href="{{route('pedidos')}}">Pedidos</a></li>
-            <li class="edit"><a href="#">Edit Posts</a></li>
+            <li class="edit"><a href="{{route('venta')}}">Venta</a></li>
             <li class="comments"><a href="#">Comments</a></li>
             <li class="users"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Manage Users</a></li>
 
@@ -27,7 +27,7 @@
         <ul class="menu">
             <li class="inve">Categories</li>
             <li>Pagina<span class="colorIcon red"></span></li>
-            <li>Mercado <span class="colorIcon orange"></span></li>
+            <li>Mercado <span class="colorIcon yellow"></span></li>
             <li>Tienda<span class="colorIcon green"></span></li>
         </ul>
     </nav>
@@ -42,14 +42,14 @@
                         <div id="profilePic">
                             <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/153917/profile/profile-512_1.jpg"/>
                         </div>
-                        <span class="controls activeControl">Weekly</span>
-                        <span class="controls">Monthly</span>
+                        <span class="controls activeControl">Semanal</span>
+                        <span class="controls">Mensual</span>
                     </div>
 
                     <div class="mainChart">
                         <canvas id="salesData"></canvas>
-                        <div class="col-md-11">
-                            <h2 class="dos">Total Sales</h2>
+                        <div class="col-md-12">
+                            <h2 class="dos">Ventas Totales</h2>
 
                             <div class="clearFix"></div>
 
@@ -57,7 +57,7 @@
                                 <div class="col">
                                     <div id="creditSales" class="progressBar"></div>
                                     <h3 class="tres">$36,059</h3>
-                                    <span class="progressTitle">Pagina </span>
+                                    <span class="progressTitle">Pagina</span>
                                 </div>
                                 <div class="col">
                                     <div id="channelSales" class="progressBar"></div>
@@ -113,8 +113,7 @@
     </main>
 
 @endsection
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+@section('scripts')
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
 <script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
 <script type="text/javascript">
@@ -137,10 +136,10 @@
                 {
                     label: "Middle",
                     fillColor: "rgba(255, 172, 100, 0.1)",
-                    strokeColor: "rgba(255, 172, 100, 1)",
-                    pointColor: "rgba(255, 172, 100, 1)",
-                    pointStrokeColor: "#202b33",
-                    pointHighlightStroke: "rgba(225,225,225,0.9)",
+                    strokeColor: "#e8e804",/*color linea*/
+                    pointColor: "#e8e804",/*color punto*/
+                    pointStrokeColor: "#202b33",/*color contorno punto*/
+                    pointHighlightStroke: "rgba(225,225,225,0.9)",/*color efecto punto*/
                     data: [1900, 1700, 2100, 3600, 2200, 2500, 2000]
                 },
                 {
@@ -186,7 +185,7 @@
             }
         });
         var channelSales = new ProgressBar.Circle('#channelSales', {
-            color: '#e88e3c',
+            color: '#e8e804',
             strokeWidth: 3,
             trailWidth: 3,
             duration: 1500,
@@ -214,3 +213,4 @@
         directSales.animate(0.34);
     });
 </script>
+    @endsection

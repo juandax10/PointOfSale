@@ -22,13 +22,19 @@ class InventarioController extends Controller
 
     public function postProducto(Request $request)
     {
-        $prod = new Product();
-        $prod->nombre = strtoupper($request->input('nombre'));
-        $prod->precio_Compra = $request->input('compra');
-        $prod->precio_Venta = $request->input('venta');
-        $prod->categoria_id= $request->input('catego');
-        $prod->cantidad = $request->input('cantidad');
-        $prod->save();
+        if($request->input('id')==0) {
+            $prod = new Product();
+            $prod->nombre = strtoupper($request->input('nombre'));
+            $prod->precio_Compra = $request->input('compra');
+            $prod->precio_Venta = $request->input('venta');
+            $prod->categoria_id = $request->input('catego');
+            $prod->cantidad = $request->input('cantidad');
+            $prod->save();
+        }else{
+            Product::where('id', $request->input('id'))
+                ->update(['nombre' => strtoupper($request->input('nombre')),'precio_Compra'=>$request->input('compra')
+                    ,'precio_Venta'=>$request->input('venta'),'categoria_id'=>$request->input('catego'),'cantidad'=>$request->input('cantidad')]);
+        }
         return back();
     }
 
