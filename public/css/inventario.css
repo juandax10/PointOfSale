@@ -1,6 +1,6 @@
 
 h1{
-    font-size: 30px;
+    font-size: 20px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
@@ -18,7 +18,7 @@ table{
 }
 /* para editar la tabla, tamaño=height, */
 .tbl-content{
-    height:340px;/*mas grande=muestra mas datos */
+    height:130px;/*mas grande=muestra mas datos */
     overflow-x:hidden;
     overflow-y:auto;
     margin-top: 0px;
@@ -28,20 +28,20 @@ table{
 /*editar titulos*/
 th{
     background: #25b7c4;
-    padding: 11px;
+    padding: 0px;
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: bold;line-height: 20px;
+    font-size: 16px;
     color: #2a3542;
     text-transform: uppercase;
 }
 /*editar los renglones*/
 td{
 
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     color: #0708ff;
     border: 1px solid rgba(7, 8, 255, 0.93);
     -webkit-transition: all 100ms ease-in;
@@ -80,14 +80,24 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 section{
-    margin: 50px;
+    margin: 10px;
 }
-
-.boton ,.id{
+.sup-nom{
+    width: 195px;
+}
+.boton ,.id,.boton2{
     width: 22px;
 }
-.boton:hover{
+.boton:hover,.boton2:hover {
     cursor: pointer;
+}
+.edit{
+    color: #2a3542;
+}
+.edit:hover {
+    color: #09a6e4;
+
+
 }
 /* for custom scrollbar for webkit browser*/
 
@@ -107,11 +117,11 @@ tbody:hover td {
 }
 
 em{
-    background-color: darkblue;
+    background-color: rgba(72, 229, 235, 0.75);
 }
 /* diseño autocomplete*/
 .ui-autocomplete-input:focus {
-    color: #fb1c01;
+    color: #020000;
     font-weight: bold;
     font-size: 14px;
     border: 3px outset #0707b5;
@@ -126,9 +136,10 @@ em{
 .tag{
     background: #fff9f4;
     border: 3px solid #0708ff;
+    text-align: center;
 }
 .tag:hover,.tag:focus {
-    box-shadow: 0 0 30px #fb1c01;
+    box-shadow: 0 0 30px #04046f;
 }
 .inp{
     border:solid 1px white;

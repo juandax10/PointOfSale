@@ -31,6 +31,10 @@ Route::post('/save-product',[
     'uses'=>'InventarioController@postProducto',
     'as'=>'añadir'
 ]);
+Route::post('/save-suple',[
+    'uses'=>'InventarioController@postSuple',
+    'as'=>'añadir-suple'
+]);
 
 Route::post('/edit', [
     'uses'=>'InventarioController@getEditProduct',
